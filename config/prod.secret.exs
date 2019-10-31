@@ -32,7 +32,7 @@ config :timesheet1, Timesheet1Web.Endpoint,
 # If you are doing OTP releases, you need to instruct Phoenix
 # to start each relevant endpoint:
 #
-#     config :timesheet1, Timesheet1Web.Endpoint, server: true
+config :timesheet1, Timesheet1Web.Endpoint, server: true
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
