@@ -18,3 +18,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+
+The user can register himself as worker or manager.
+User can then login.
+Based on user's type, the redirection mechanism will provide him the option to either book the timesheet or approve the timesheet.
+This is accomplished via isManager field.
