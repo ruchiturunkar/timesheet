@@ -1,0 +1,28 @@
+<h1>Show Timesheet</h1>
+
+<ul>
+
+  <li>
+    <strong>Jobid:</strong>
+    <%= @timesheet.jobId %>
+  </li>
+
+  <li>
+    <strong>Hours:</strong>
+    <%= @timesheet.hours %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @timesheet.date %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @timesheet.status %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.timesheet_path(@conn, :edit, @timesheet) %></span>
+<span><%= link "Back", to: Routes.timesheet_path(@conn, :index) %></span>

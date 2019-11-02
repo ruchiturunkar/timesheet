@@ -11,18 +11,39 @@
 	<div class="container">
       <nav class="navbar navbar-expand-sm navbar-light bg-white">
         <div class="col-4">
-          <a class="navbar-brand" href="#">Lens</a>
+          <a class="navbar-brand" href="#">Timesheet Application</a>
         </div>
-        <div class="col-8">
+        <div class="col-4">
+	  <%= if @current_user do %>  	
           <ul class="navbar-nav mr-auto">
+		<%= if @current_user.isManager do %>
             <li class="nav-item active">
-              <a class="nav-link" href="#">All Photos</a>
+              <a class="nav-link" href="/timesheets/new">Approve Timesheet</a>
             </li>
+	        <% else %>
+	    <li class="nav-item active">
+	      <a class="nav-link" href="/timesheets/new">Book Timesheet</a>
+	    </li>
+	        <% end %>
             <li class="nav-item">
-              <a class="nav-link" href="#">Your Photos</a>
+		    <a class="nav-link" href="/timesheets">View Timesheet</a>
             </li>
           </ul>
+	  <% else %>
+	  <% end %>
+	  </div>
+
+	<div class="col-4">
+          <%= if @current_user do %>
+	    User: <%= @current_user.name %>
+            (<%= link("Logout", to: Routes.session_path(@conn, :delete),
+	     method: :delete) %>)
+          <% else %>
+            <%= link("Login", to: Routes.session_path(@conn, :new)) %>
+	    <a href="/users/new">New_User</a>
+          <% end %>
         </div>
+
       </nav>
 
       <div class="row">
@@ -45,3 +66,4 @@
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
+

@@ -1,0 +1,47 @@
+ 
+
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form_group">
+  <%= label f, :jobId %>
+  <%= select f, :jobId, ["ACME_JOB1": "1", "ACME_JOB2": "2", "ACME_JOB3": "3", 
+			"ACME_JOB4": "4", "ACME_JOB5": "5", "ACME_JOB6": "6",
+			"ACME_JOB7": "7", "ACME_JOB8": "8"], class: "form-control" %>
+  <%= error_tag f, :jobId %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hours %>
+  <%= number_input f, :hours, class: "form control" %>
+  <%= error_tag f, :hours %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :date %>
+  <%= date_select f, :date, class: "form-control" %>
+  <%= error_tag f, :date %>
+  </div>
+
+
+  <%= if @current_user.isManager do %>
+  <div class="form-group">
+  <%= label f, :status %>
+  <%= text_input f, :status, class: "form-control" %>
+  <%= error_tag f, :status %>
+  </div> 
+  <% else %>
+  <div class="form-group">
+  <%= label f, :status %>
+  <%= text_input f, :status, value: "new", disabled: "disabled" %>
+  <%= error_tag f, :status %>
+  </div>
+  <% end %>
+  <div>
+    <%= submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

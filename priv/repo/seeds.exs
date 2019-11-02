@@ -9,3 +9,10 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+#
+#
+alias Timesheet1.Repo
+alias Timesheet1.Users.User
+
+Repo.insert!(%User{name: "Ruchti", email: "ruchit.urunkar@acme.com", isManager: false, manager: "Ana"})
+Repo.insert!(%User{name: "Ana", email: "ana.bollinger@acme.com", isManager: true, manager: "Ana"})
