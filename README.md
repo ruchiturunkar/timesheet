@@ -1,5 +1,11 @@
 # Timesheet1
 
+## Introduction
+ * A timesheet web application using javascript, bootstrap, PostgreSQL
+ * An employee logs hours and Manager approves/rejects them
+ * A user logs in to application via credentials, passwords are implemented using - Argon2
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
@@ -8,19 +14,3 @@ To start your Phoenix server:
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
-
-
-The user can register himself as worker or manager.
-User can then login.
-Based on user's type, the redirection mechanism will provide him the option to either book the timesheet or approve the timesheet.
-This is accomplished via isManager field.
